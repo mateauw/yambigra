@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YAMB 4 kopije</title>
+<style>
+  :root{
+    --red:#c62828;
+    --cell-w:55px;
+    --cell-h:24px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+  }
+  body{background:#f7f7f7;color:#222;margin:8px}
+  h1{font-size:14px;color:var(--red);margin:0 0 8px}
+  .wrap{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+  .sheet{
+    background:white;
+    border:2px solid var(--red);
+    width:360px;
+    padding:4px;
+  }
+  .titlebar{font-weight:700;color:var(--red);text-align:center;margin-bottom:2px;font-size:11px}
+  table{border-collapse:collapse;width:100%}
+  td,th{
+    border:1px solid var(--red);
+    text-align:center;
+    padding:1px;
+    min-width:var(--cell-w);
+    height:var(--cell-h);
+  }
+  th{background:var(--red);color:white;font-size:10px}
+  .num-col{width:22px;font-weight:700;color:var(--red)}
+  input[type="text"]{
+    width:100%;height:100%;
+    border:0;outline:none;
+    text-align:center;
+    font-size:11px;
+    background:transparent;
+  }
+  .label-left{text-align:left;padding-left:2px;font-weight:700;color:var(--red);font-size:10px}
+  .small{font-size:9px}
+</style>
+</head>
+<body>
+<h1>YAMB – 4 kopije</h1>
+<div class="wrap">
+
+<!-- GENERATOR: napravimo 4 kopije -->
+<script>
+const labels = [
+ "1","2","3","4","5","6",
+ "ZA ZBIR 60+ BONUS 30",
+ "MAX.","MIN.","MAX-MIN×1",
+ "SKALA","FUL","POKER","YAMB","ZBROJ","UKUPNO"
+];
+function makeSheet(idx){
+  let html = `<section class="sheet"><div class="titlebar">IGRA ${idx}</div><table><thead><tr><th>#</th><th>C1</th><th>C2</th><th>C3</th><th>C4</th><th>YAMB</th></tr></thead><tbody>`;
+  for(let i=0;i<labels.length;i++){
+    html += `<tr>`;
+    html += `<td class="num-col">${labels[i]}</td>`;
+    for(let c=1;c<=5;c++){
+      html += `<td><input type="text" name="S${idx}_R${i}_C${c}"></td>`;
+    }
+    html += `</tr>`;
+  }
+  html += `</tbody></table></section>`;
+  return html;
+}
+document.write(makeSheet(1)+makeSheet(2)+makeSheet(3)+makeSheet(4));
+</script>
+
+</div>
+</body>
+</html>
+
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YAMB 4 kopije + kocke</title>
+<style>
+  :root{
+    --red:#c62828;
+    --bg:#f7f7f7;
+    --text:#222;
+    --cell-w:55px; --cell-h:24px;
+    font-family: Arial, sans-serif; font-size:12px;
+  }
+  body{background:var(--bg);color:var(--text);margin:8px;transition:all .3s}
+  h1{font-size:14px;color:var(--red);margin:0 0 8px}
+  .wrap{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+  .sheet{background:white;border:2px solid var(--red);width:360px;padding:4px}
+  .titlebar{font-weight:700;color:var(--red);text-align:center;margin-bottom:2px;font-size:11px}
+  table{border-collapse:collapse;width:100%}
+  td,th{border:1px solid var(--red);text-align:center;padding:1px;min-width:var(--cell-w);height:var(--cell-h)}
+  th{background:var(--red);color:white;font-size:10px}
+  .num-col{width:22px;font-weight:700;color:var(--red)}
+  input[type="text"]{width:100%;height:100%;border:0;outline:none;text-align:center;font-size:11px;background:transparent}
+  .label-left{text-align:left;padding-left:2px;font-weight:700;color:var(--red);font-size:10px}
+  .small{font-size:9px}
+  /* kocke */
+  .dice-area{text-align:center;margin:18px 0}
+  .die{display:inline-block;width:50px;height:50px;
+       background:var(--red);border-radius:8px;
+       margin:4px;cursor:pointer;position:relative}
+  .pip{width:10px;height:10px;background:white;border-radius:50%;
+       position:absolute}
+  .controls{margin-top:6px}
+  .btn{background:var(--red);color:white;border:0;padding:6px 12px;
+       border-radius:4px;cursor:pointer;font-size:12px}
+  /* dark mode */
+  body.dark{--bg:#121212;--text:#ddd}
+  body.dark .sheet{background:#1e1e1e}
+  body.dark th{background:#555;color:#fff}
+  body.dark .num-col,.label-left{color:#bbb}
+</style>
+</head>
+<body>
+<h1>YAMB – 4 kopije + kocke</h1>
+<button class="btn" onclick="toggleMode()">Light/Dark mode</button>
+
+<div class="wrap">
+<script>
+const labels=["1","2","3","4","5","6",
+ "ZBIR 60+ BONUS 30","MAX.","MIN.","MAX-MIN×1",
+ "SKALA","FUL","POKER","YAMB","ZBROJ","UKUPNO"];
+function makeSheet(idx){
+ let html=`<section class="sheet"><div class="titlebar">IGRA ${idx}</div><table><thead><tr><th>#</th><th>C1</th><th>C2</th><th>C3</th><th>C4</th><th>Y</th></tr></thead><tbody>`;
+ for(let i=0;i<labels.length;i++){
+   html+=`<tr><td class="num-col">${labels[i]}</td>`;
+   for(let c=1;c<=5;c++){
+     html+=`<td><input type="text" name="S${idx}_R${i}_C${c}"></td>`;
+   }
+   html+=`</tr>`;
+ }
+ html+=`</tbody></table></section>`;
+ return html;
+}
+document.write(makeSheet(1)+makeSheet(2)+makeSheet(3)+makeSheet(4));
+</script>
+</div>
+
+<div class="dice-area">
+  <div id="dice"></div>
+  <div class="controls">
+    <button class="btn" onclick="rollAll()">Zavrti sve</button>
+  </div>
+</div>
+
+<script>
+function createDie(num){
+  const d=document.createElement('div');d.className='die';
+  d.onclick=()=>rollDie(d);
+  d.dataset.value=num;
+  drawPips(d,num);return d;
+}
+function drawPips(die,num){
+  die.innerHTML='';
+  const spots={
+   1:[[50,50]],
+   2:[[25,25],[75,75]],
+   3:[[25,25],[50,50],[75,75]],
+   4:[[25,25],[25,75],[75,25],[75,75]],
+   5:[[25,25],[25,75],[75,25],[75,75],[50,50]],
+   6:[[25,25],[25,50],[25,75],[75,25],[75,50],[75,75]]
+  };
+  spots[num].forEach(p=>{
+    let pip=document.createElement('div');
+    pip.className='pip';
+    pip.style.left=(p[0]-5)+'%';
+    pip.style.top=(p[1]-5)+'%';
+    die.appendChild(pip);
+  });
+}
+function rollDie(die){
+  const n=Math.floor(Math.random()*6)+1;
+  die.dataset.value=n;
+  drawPips(die,n);
+}
+function rollAll(){
+  document.querySelectorAll('.die').forEach(d=>rollDie(d));
+}
+function toggleMode(){
+  document.body.classList.toggle('dark');
+}
+const diceDiv=document.getElementById('dice');
+for(let i=0;i<6;i++){diceDiv.appendChild(createDie(1+Math.floor(Math.random()*6)));}
+</script>
+</body>
+</html>
+
