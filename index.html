@@ -633,37 +633,109 @@
 </body>
 </html>
 
-<script type="module">
-  // === Firebase uvoz ===
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-  import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-  // === Tvoj config (ostaje isti) ===
-  const firebaseConfig = {
-    apiKey: "AIzaSyAqSbSzO9vZlQdFe24QI1y-iuSj0CQ0rtw",
-    authDomain: "awsc-14961.firebaseapp.com",
-    databaseURL: "https://awsc-14961-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "awsc-14961",
-    storageBucket: "awsc-14961.firebasestorage.app",
-    messagingSenderId: "765495660593",
-    appId: "1:765495660593:web:3f97cf717455c135ad4510",
-    measurementId: "G-X1SL1D1J5T"
-  };
-
-  // === Spoji se na app i bazu ===
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
-
-  // === Primjer: upiši nešto u bazu ===
-  function rollDice() {
-    const dice = Array.from({length:6}, ()=>1+Math.floor(Math.random()*6));
-    set(ref(db,"dice"), dice); // upiši u bazu
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>YAMB / Jamb obrazac (2x)</title>
+<style>
+  :root {
+    --red: #c62828;
+    --light-bg: #f7f7f7;
+    --dark-bg: #000;
+    --light-text: #222;
+    --dark-text: #eee;
+    --cell-w: 72px;
+    --cell-h: 36px;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
-  // === Primjer: slušaj promjene i ispiši ih ===
-  onValue(ref(db,"dice"), snap => {
-    if (snap.val()) {
-      console.log("Kocke iz baze:", snap.val());
-    }
+  body {
+    background: var(--light-bg);
+    color: var(--light-text);
+    padding: 18px;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  body.dark {
+    background: var(--dark-bg);
+    color: var(--dark-text);
+  }
+
+  h1 { font-size:18px;margin:0 0 10px;color:var(--red) }
+  .wrap { display:flex;gap:18px;flex-wrap:wrap }
+  .sheet {
+    background:linear-gradient(180deg,#fff6f6,#fff);
+    border:3px solid var(--red);
+    padding:12px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.08);
+    width:760px;
+    transition: background 0.3s;
+  }
+  body.dark .sheet { background:#111; }
+
+  table { border-collapse:collapse;width:100% }
+  td, th {
+    border:1px solid var(--red);
+    text-align:center;
+    padding:4px;
+    vertical-align:middle;
+    min-width:var(--cell-w);
+    height:var(--cell-h);
+  }
+  th { background:var(--red);color:white;font-weight:700;padding:6px }
+  .num-col { width:48px;font-weight:700;color:var(--red) }
+  .big-right { width:120px }
+  input[type="text"] {
+    width:100%;
+    height:100%;
+    border:0;
+    padding:4px;
+    box-sizing:border-box;
+    text-align:center;
+    font-size:14px;
+    background:transparent;
+    outline:none;
+    color:inherit;
+  }
+  .label-left { font-weight:700;text-align:left;padding-left:8px;color:var(--red) }
+  .small{font-size:12px}
+  .wide{min-width:90px}
+  .footer-note{font-size:11px;color:#666;margin-top:8px}
+  @media(max-width:900px){ .sheet{width:100%} }
+
+  /* Dice */
+  .die circle { fill:#222; }
+  body.dark .die circle { fill: var(--red); }
+
+  /* toggle button */
+  .toggle-btn {
+    margin-bottom: 12px;
+    padding: 8px 14px;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<button class="toggle-btn" id="toggleMode">🌙 Dark/Light</button>
+<h1>YAMB / Jamb obrazac — 2 kopije (uredivo)</h1>
+
+<!-- your existing sheets + dice go here (unchanged) -->
+
+<script>
+  // Toggle dark/light mode
+  document.getElementById('toggleMode').addEventListener('click', ()=>{
+    document.body.classList.toggle('dark');
   });
 </script>
+
+</body>
+</html>
