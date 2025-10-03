@@ -632,3 +632,38 @@
 
 </body>
 </html>
+
+<script type="module">
+  // === Firebase uvoz ===
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+  // === Tvoj config (ostaje isti) ===
+  const firebaseConfig = {
+    apiKey: "AIzaSyAqSbSzO9vZlQdFe24QI1y-iuSj0CQ0rtw",
+    authDomain: "awsc-14961.firebaseapp.com",
+    databaseURL: "https://awsc-14961-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "awsc-14961",
+    storageBucket: "awsc-14961.firebasestorage.app",
+    messagingSenderId: "765495660593",
+    appId: "1:765495660593:web:3f97cf717455c135ad4510",
+    measurementId: "G-X1SL1D1J5T"
+  };
+
+  // === Spoji se na app i bazu ===
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  // === Primjer: upiši nešto u bazu ===
+  function rollDice() {
+    const dice = Array.from({length:6}, ()=>1+Math.floor(Math.random()*6));
+    set(ref(db,"dice"), dice); // upiši u bazu
+  }
+
+  // === Primjer: slušaj promjene i ispiši ih ===
+  onValue(ref(db,"dice"), snap => {
+    if (snap.val()) {
+      console.log("Kocke iz baze:", snap.val());
+    }
+  });
+</script>
