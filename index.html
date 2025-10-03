@@ -1,741 +1,215 @@
 <!doctype html>
 <html lang="hr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>YAMB / Jamb obrazac (2x)</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YAMB 4 kopije</title>
 <style>
   :root{
     --red:#c62828;
-    --light:#fff6f6;
-    --cell-w:72px;
-    --cell-h:36px;
-    font-family: Arial, Helvetica, sans-serif;
+    --cell-w:55px;
+    --cell-h:24px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
   }
-  body{background:#f7f7f7;color:#222;padding:18px;}
-  h1{font-size:18px;margin:0 0 10px;color:var(--red)}
-  .wrap{display:flex;gap:18px;flex-wrap:wrap}
+  body{background:#f7f7f7;color:#222;margin:8px}
+  h1{font-size:14px;color:var(--red);margin:0 0 8px}
+  .wrap{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
   .sheet{
-    background:linear-gradient(180deg,var(--light),#fff);
-    border:3px solid var(--red);
-    padding:12px;
-    box-shadow:0 2px 6px rgba(0,0,0,0.08);
-    width:760px;
+    background:white;
+    border:2px solid var(--red);
+    width:360px;
+    padding:4px;
   }
-  .titlebar{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
-  .titlebar .left{font-weight:700;color:var(--red)}
+  .titlebar{font-weight:700;color:var(--red);text-align:center;margin-bottom:2px;font-size:11px}
   table{border-collapse:collapse;width:100%}
-  td, th{
+  td,th{
     border:1px solid var(--red);
     text-align:center;
-    padding:4px;
-    vertical-align:middle;
+    padding:1px;
     min-width:var(--cell-w);
     height:var(--cell-h);
   }
-  th{background:var(--red);color:white;font-weight:700;padding:6px}
-  .num-col{width:48px;font-weight:700;color:var(--red)}
-  .big-right{width:120px}
+  th{background:var(--red);color:white;font-size:10px}
+  .num-col{width:22px;font-weight:700;color:var(--red)}
   input[type="text"]{
-    width:100%;
-    height:100%;
-    border:0;
-    padding:4px;
-    box-sizing:border-box;
+    width:100%;height:100%;
+    border:0;outline:none;
     text-align:center;
-    font-size:14px;
+    font-size:11px;
     background:transparent;
-    outline:none;
   }
-  /* special rows */
-  .label-left{font-weight:700;text-align:left;padding-left:8px;color:var(--red)}
-  .small{font-size:12px}
-  .wide{min-width:90px}
-  .footer-note{font-size:11px;color:#666;margin-top:8px}
-  /* responsive */
-  @media(max-width:900px){
-    .sheet{width:100%}
-  }
+  .label-left{text-align:left;padding-left:2px;font-weight:700;color:var(--red);font-size:10px}
+  .small{font-size:9px}
 </style>
 </head>
 <body>
-
-<h1>YAMB / Jamb obrazac — 2 kopije (uredivo)</h1>
+<h1>YAMB – 4 kopije</h1>
 <div class="wrap">
-  <!-- COPY 1 -->
-  <section class="sheet" aria-label="Yamb obrazac 1">
-    <div class="titlebar">
-      <div class="left">IGRA</div>
-      <div class="right small">YAMB</div>
-    </div>
 
-    <table role="table" aria-label="Yamb tablica">
-      <thead>
-        <tr>
-          <th></th>
-          <th colspan="4">Kolone (uredive)</th>
-          <th class="big-right">YAMB (desno)</th>
-        </tr>
-        <tr>
-          <th class="num-col">#</th>
-          <th>Kolona 1</th>
-          <th>Kolona 2</th>
-          <th>Kolona 3</th>
-          <th>Kolona 4</th>
-          <th class="big-right">Yamb</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <!-- 1..6 -->
-        <script>
-        </script>
-        <tr><td class="num-col">1</td>
-          <td><input type="text" name="c1_r1"></td>
-          <td><input type="text" name="c2_r1"></td>
-          <td><input type="text" name="c3_r1"></td>
-          <td><input type="text" name="c4_r1"></td>
-          <td class="big-right"><input type="text" name="yamb_r1"></td>
-        </tr>
-        <tr><td class="num-col">2</td>
-          <td><input type="text" name="c1_r2"></td>
-          <td><input type="text" name="c2_r2"></td>
-          <td><input type="text" name="c3_r2"></td>
-          <td><input type="text" name="c4_r2"></td>
-          <td class="big-right"><input type="text" name="yamb_r2"></td>
-        </tr>
-        <tr><td class="num-col">3</td>
-          <td><input type="text" name="c1_r3"></td>
-          <td><input type="text" name="c2_r3"></td>
-          <td><input type="text" name="c3_r3"></td>
-          <td><input type="text" name="c4_r3"></td>
-          <td class="big-right"><input type="text" name="yamb_r3"></td>
-        </tr>
-        <tr><td class="num-col">4</td>
-          <td><input type="text" name="c1_r4"></td>
-          <td><input type="text" name="c2_r4"></td>
-          <td><input type="text" name="c3_r4"></td>
-          <td><input type="text" name="c4_r4"></td>
-          <td class="big-right"><input type="text" name="yamb_r4"></td>
-        </tr>
-        <tr><td class="num-col">5</td>
-          <td><input type="text" name="c1_r5"></td>
-          <td><input type="text" name="c2_r5"></td>
-          <td><input type="text" name="c3_r5"></td>
-          <td><input type="text" name="c4_r5"></td>
-          <td class="big-right"><input type="text" name="yamb_r5"></td>
-        </tr>
-        <tr><td class="num-col">6</td>
-          <td><input type="text" name="c1_r6"></td>
-          <td><input type="text" name="c2_r6"></td>
-          <td><input type="text" name="c3_r6"></td>
-          <td><input type="text" name="c4_r6"></td>
-          <td class="big-right"><input type="text" name="yamb_r6"></td>
-        </tr>
-
-        <!-- bonus -->
-        <tr>
-          <td class="label-left" colspan="1">ZA ZBIR 60 I VIŠE BÓNUS 30</td>
-          <td><input type="text" name="c1_bonus"></td>
-          <td><input type="text" name="c2_bonus"></td>
-          <td><input type="text" name="c3_bonus"></td>
-          <td><input type="text" name="c4_bonus"></td>
-          <td class="big-right"><input type="text" name="yamb_bonus"></td>
-        </tr>
-
-        <!-- MAX / MIN -->
-        <tr>
-          <td class="label-left">MAX.</td>
-          <td><input type="text" name="c1_max"></td>
-          <td><input type="text" name="c2_max"></td>
-          <td><input type="text" name="c3_max"></td>
-          <td><input type="text" name="c4_max"></td>
-          <td class="big-right"><input type="text" name="yamb_max"></td>
-        </tr>
-        <tr>
-          <td class="label-left">MIN.</td>
-          <td><input type="text" name="c1_min"></td>
-          <td><input type="text" name="c2_min"></td>
-          <td><input type="text" name="c3_min"></td>
-          <td><input type="text" name="c4_min"></td>
-          <td class="big-right"><input type="text" name="yamb_min"></td>
-        </tr>
-
-        <tr>
-          <td class="label-left small">MAX - MIN x BROJ NA 1</td>
-          <td><input type="text" name="c1_calc"></td>
-          <td><input type="text" name="c2_calc"></td>
-          <td><input type="text" name="c3_calc"></td>
-          <td><input type="text" name="c4_calc"></td>
-          <td class="big-right"><input type="text" name="yamb_calc"></td>
-        </tr>
-
-        <!-- SKALA -->
-        <tr>
-          <td class="label-left">SKALA (I=66 II=56 III=46)</td>
-          <td><input type="text" name="c1_skala"></td>
-          <td><input type="text" name="c2_skala"></td>
-          <td><input type="text" name="c3_skala"></td>
-          <td><input type="text" name="c4_skala"></td>
-          <td class="big-right"><input type="text" name="yamb_skala"></td>
-        </tr>
-
-        <!-- FUL / POKER / YAMB -->
-        <tr>
-          <td class="label-left">FUL (zbir +30)</td>
-          <td><input type="text" name="c1_ful"></td>
-          <td><input type="text" name="c2_ful"></td>
-          <td><input type="text" name="c3_ful"></td>
-          <td><input type="text" name="c4_ful"></td>
-          <td class="big-right"><input type="text" name="yamb_ful"></td>
-        </tr>
-
-        <tr>
-          <td class="label-left">POKER (zbir +40)</td>
-          <td><input type="text" name="c1_poker"></td>
-          <td><input type="text" name="c2_poker"></td>
-          <td><input type="text" name="c3_poker"></td>
-          <td><input type="text" name="c4_poker"></td>
-          <td class="big-right"><input type="text" name="yamb_poker"></td>
-        </tr>
-
-        <tr>
-          <td class="label-left">YAMB (zbir +50)</td>
-          <td><input type="text" name="c1_yamb"></td>
-          <td><input type="text" name="c2_yamb"></td>
-          <td><input type="text" name="c3_yamb"></td>
-          <td><input type="text" name="c4_yamb"></td>
-          <td class="big-right"><input type="text" name="yamb_yamb"></td>
-        </tr>
-
-        <tr>
-          <td class="label-left">SKALA + FUL + POKER + YAMB</td>
-          <td><input type="text" name="c1_summaj"></td>
-          <td><input type="text" name="c2_summaj"></td>
-          <td><input type="text" name="c3_summaj"></td>
-          <td><input type="text" name="c4_summaj"></td>
-          <td class="big-right"><input type="text" name="yamb_summaj"></td>
-        </tr>
-
-      </tbody>
-
-      <tfoot>
-        <tr>
-          <td class="label-left small">UKUPNO</td>
-          <td colspan="4"><input type="text" name="total_all" style="width:100%;height:36px;font-weight:700"></td>
-          <td class="big-right"><input type="text" name="total_yamb" style="width:100%;height:36px;font-weight:700"></td>
-        </tr>
-      </tfoot>
-    </table>
-
-    <div class="footer-note">Ovo je uređiva HTML verzija obrasca; polja su <em>free text</em>.</div>
-  </section>
-
-  <!-- COPY 2 (identična struktura, samo drugačiji name prefix "B_") -->
-  <section class="sheet" aria-label="Yamb obrazac 2">
-    <div class="titlebar">
-      <div class="left">IGRA (kopija)</div>
-      <div class="right small">YAMB</div>
-    </div>
-
-    <table role="table" aria-label="Yamb tablica kopija">
-      <thead>
-        <tr>
-          <th></th>
-          <th colspan="4">Kolone (uredive)</th>
-          <th class="big-right">YAMB (desno)</th>
-        </tr>
-        <tr>
-          <th class="num-col">#</th>
-          <th>Kolona 1</th>
-          <th>Kolona 2</th>
-          <th>Kolona 3</th>
-          <th>Kolona 4</th>
-          <th class="big-right">Yamb</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <!-- rows 1..6 -->
-        <tr><td class="num-col">1</td>
-          <td><input type="text" name="B_c1_r1"></td>
-          <td><input type="text" name="B_c2_r1"></td>
-          <td><input type="text" name="B_c3_r1"></td>
-          <td><input type="text" name="B_c4_r1"></td>
-          <td class="big-right"><input type="text" name="B_yamb_r1"></td>
-        </tr>
-        <tr><td class="num-col">2</td>
-          <td><input type="text" name="B_c1_r2"></td>
-          <td><input type="text" name="B_c2_r2"></td>
-          <td><input type="text" name="B_c3_r2"></td>
-          <td><input type="text" name="B_c4_r2"></td>
-          <td class="big-right"><input type="text" name="B_yamb_r2"></td>
-        </tr>
-        <tr><td class="num-col">3</td>
-          <td><input type="text" name="B_c1_r3"></td>
-          <td><input type="text" name="B_c2_r3"></td>
-          <td><input type="text" name="B_c3_r3"></td>
-          <td><input type="text" name="B_c4_r3"></td>
-          <td class="big-right"><input type="text" name="B_yamb_r3"></td>
-        </tr>
-        <tr><td class="num-col">4</td>
-          <td><input type="text" name="B_c1_r4"></td>
-          <td><input type="text" name="B_c2_r4"></td>
-          <td><input type="text" name="B_c3_r4"></td>
-          <td><input type="text" name="B_c4_r4"></td>
-          <td class="big-right"><input type="text" name="B_yamb_r4"></td>
-        </tr>
-        <tr><td class="num-col">5</td>
-          <td><input type="text" name="B_c1_r5"></td>
-          <td><input type="text" name="B_c2_r5"></td>
-          <td><input type="text" name="B_c3_r5"></td>
-          <td><input type="text" name="B_c4_r5"></td>
-          <td class="big-right"><input type="text" name="B_yamb_r5"></td>
-        </tr>
-        <tr><td class="num-col">6</td>
-          <td><input type="text" name="B_c1_r6"></td>
-          <td><input type="text" name="B_c2_r6"></td>
-          <td><input type="text" name="B_c3_r6"></td>
-          <td><input type="text" name="B_c4_r6"></td>
-          <td class="big-right"><input type="text" name="B_yamb_r6"></td>
-        </tr>
-
-        <tr>
-          <td class="label-left" colspan="1">ZA ZBIR 60 I VIŠE BÓNUS 30</td>
-          <td><input type="text" name="B_c1_bonus"></td>
-          <td><input type="text" name="B_c2_bonus"></td>
-          <td><input type="text" name="B_c3_bonus"></td>
-          <td><input type="text" name="B_c4_bonus"></td>
-          <td class="big-right"><input type="text" name="B_yamb_bonus"></td>
-        </tr>
-
-        <tr>
-          <td class="label-left">MAX.</td>
-          <td><input type="text" name="B_c1_max"></td>
-          <td><input type="text" name="B_c2_max"></td>
-          <td><input type="text" name="B_c3_max"></td>
-          <td><input type="text" name="B_c4_max"></td>
-          <td class="big-right"><input type="text" name="B_yamb_max"></td>
-        </tr>
-        <tr>
-          <td class="label-left">MIN.</td>
-          <td><input type="text" name="B_c1_min"></td>
-          <td><input type="text" name="B_c2_min"></td>
-          <td><input type="text" name="B_c3_min"></td>
-          <td><input type="text" name="B_c4_min"></td>
-          <td class="big-right"><input type="text" name="B_yamb_min"></td>
-        </tr>
-
-        <tr>
-          <td class="label-left small">MAX - MIN x BROJ NA 1</td>
-          <td><input type="text" name="B_c1_calc"></td>
-          <td><input type="text" name="B_c2_calc"></td>
-          <td><input type="text" name="B_c3_calc"></td>
-          <td><input type="text" name="B_c4_calc"></td>
-          <td class="big-right"><input type="text" name="B_yamb_calc"></td>
-        </tr>
-
-        <tr>
-          <td class="label-left">SKALA (I=66 II=56 III=46)</td>
-          <td><input type="text" name="B_c1_skala"></td>
-          <td><input type="text" name="B_c2_skala"></td>
-          <td><input type="text" name="B_c3_skala"></td>
-          <td><input type="text" name="B_c4_skala"></td>
-          <td class="big-right"><input type="text" name="B_yamb_skala"></td>
-        </tr>
-
-        <tr>
-          <td class="label-left">FUL (zbir +30)</td>
-          <td><input type="text" name="B_c1_ful"></td>
-          <td><input type="text" name="B_c2_ful"></td>
-          <td><input type="text" name="B_c3_ful"></td>
-          <td><input type="text" name="B_c4_ful"></td>
-          <td class="big-right"><input type="text" name="B_yamb_ful"></td>
-        </tr>
-
-        <tr>
-          <td class="label-left">POKER (zbir +40)</td>
-          <td><input type="text" name="B_c1_poker"></td>
-          <td><input type="text" name="B_c2_poker"></td>
-          <td><input type="text" name="B_c3_poker"></td>
-          <td><input type="text" name="B_c4_poker"></td>
-          <td class="big-right"><input type="text" name="B_yamb_poker"></td>
-        </tr>
-
-        <tr>
-          <td class="label-left">YAMB (zbir +50)</td>
-          <td><input type="text" name="B_c1_yamb"></td>
-          <td><input type="text" name="B_c2_yamb"></td>
-          <td><input type="text" name="B_c3_yamb"></td>
-          <td><input type="text" name="B_c4_yamb"></td>
-          <td class="big-right"><input type="text" name="B_yamb_yamb"></td>
-        </tr>
-
-        <tr>
-          <td class="label-left">SKALA + FUL + POKER + YAMB</td>
-          <td><input type="text" name="B_c1_summaj"></td>
-          <td><input type="text" name="B_c2_summaj"></td>
-          <td><input type="text" name="B_c3_summaj"></td>
-          <td><input type="text" name="B_c4_summaj"></td>
-          <td class="big-right"><input type="text" name="B_yamb_summaj"></td>
-        </tr>
-
-      </tbody>
-
-      <tfoot>
-        <tr>
-          <td class="label-left small">UKUPNO</td>
-          <td colspan="4"><input type="text" name="B_total_all" style="width:100%;height:36px;font-weight:700"></td>
-          <td class="big-right"><input type="text" name="B_total_yamb" style="width:100%;height:36px;font-weight:700"></td>
-        </tr>
-      </tfoot>
-    </table>
-
-    <div class="footer-note">Druga kopija obrasca, ista struktura. Imena inputa su prefiksana sa "B_".</div>
-  </section>
-</div>
-
-<!-- OPTIONAL small script to allow Enter to go to next input below -->
+<!-- GENERATOR: napravimo 4 kopije -->
 <script>
-  // Press Enter to move to the next input in column order (nice for brzinsko popunjavanje)
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Enter'){
-      const active = document.activeElement;
-      if(active && active.tagName === 'INPUT'){
-        e.preventDefault();
-        const inputs = Array.from(document.querySelectorAll('input[type="text"]'));
-        const idx = inputs.indexOf(active);
-        if(idx >= 0 && idx < inputs.length - 1) inputs[idx+1].focus();
-      }
+const labels = [
+ "1","2","3","4","5","6",
+ "ZA ZBIR 60+ BONUS 30",
+ "MAX.","MIN.","MAX-MIN×1",
+ "SKALA","FUL","POKER","YAMB","ZBROJ","UKUPNO"
+];
+function makeSheet(idx){
+  let html = `<section class="sheet"><div class="titlebar">IGRA ${idx}</div><table><thead><tr><th>#</th><th>C1</th><th>C2</th><th>C3</th><th>C4</th><th>YAMB</th></tr></thead><tbody>`;
+  for(let i=0;i<labels.length;i++){
+    html += `<tr>`;
+    html += `<td class="num-col">${labels[i]}</td>`;
+    for(let c=1;c<=5;c++){
+      html += `<td><input type="text" name="S${idx}_R${i}_C${c}"></td>`;
     }
-  });
+    html += `</tr>`;
+  }
+  html += `</tbody></table></section>`;
+  return html;
+}
+document.write(makeSheet(1)+makeSheet(2)+makeSheet(3)+makeSheet(4));
 </script>
-</body>
-</html>
-<!doctype html>
-<html lang="hr">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Yamb obrazac + Kockice (interaktivno)</title>
-<style>
-  :root{--red:#c62828;--bg:#f7f7f7}
-  body{font-family:Inter, system-ui, Arial, sans-serif;background:var(--bg);margin:16px;color:#222}
-  h1{color:var(--red);font-size:18px;margin-bottom:12px}
-  .wrap{display:flex;gap:16px;flex-wrap:wrap}
-  .sheet{background:#fff;border:3px solid var(--red);padding:12px;width:760px;box-sizing:border-box}
-  table{border-collapse:collapse;width:100%}
-  td,th{border:1px solid var(--red);padding:6px;text-align:center}
-  input[type=text]{width:100%;border:0;text-align:center;background:transparent;outline:none}
 
-  /* --- Dice UI --- */
-  .dice-area{margin-top:18px;padding:12px;background:white;border:2px solid #ddd;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.06);max-width:980px}
-  .dice-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-  .controls{display:flex;gap:8px;align-items:center}
-  button{background:var(--red);color:#fff;border:0;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:700}
-  button.secondary{background:#666}
-  .hint{color:#666;font-size:13px}
-
-  .dice-grid{display:flex;gap:12px;flex-wrap:wrap}
-  .die{
-    width:84px;height:84px;border-radius:12px;background:linear-gradient(180deg,#fff,#f3f3f3);display:grid;place-items:center;box-shadow:0 6px 14px rgba(0,0,0,0.08);cursor:pointer;border:2px solid #eee;user-select:none;position:relative;transition:transform .22s ease, box-shadow .22s ease;border-color:transparent
-  }
-  .die:active{transform:scale(.98)}
-
-  /* rolling animation */
-  .rolling{animation:shake 420ms ease-in-out infinite;transform-origin:center}
-  @keyframes shake{0%{transform:rotate(0) translateY(0)}20%{transform:rotate(20deg) translateY(-6px)}40%{transform:rotate(-14deg) translateY(4px)}60%{transform:rotate(10deg) translateY(-3px)}80%{transform:rotate(-6deg) translateY(2px)}100%{transform:rotate(0) translateY(0)}}
-
-  /* pips (we draw pips using SVG inside each die) */
-  svg.dface{width:72px;height:72px}
-
-  /* accessibility focus */
-  .die:focus{outline:3px solid rgba(198,40,40,0.15);outline-offset:4px}
-
-  .status{margin-left:12px;color:#444;font-weight:600}
-
-  @media(max-width:900px){
-    .wrap{flex-direction:column}
-    .sheet{width:100%}
-  }
-</style>
-</head>
-<body>
-
-<h1>YAMB obrazac + interaktivne kockice</h1>
-
-<!-- (ovdje u stvarnoj integraciji ide tablica iz prethodnog odgovora) -->
-
-<div class="dice-area" aria-live="polite">
-  <div class="dice-top">
-    <div>
-      <strong>Kockice</strong>
-      <div class="hint">Klikni na pojedinačnu kocku da ju baciš. "Zavrti sve" baca svih 6.</div>
-    </div>
-
-    <div class="controls">
-      <button id="rollAll">Zavrti sve</button>
-      <button id="reset" class="secondary">Reset</button>
-      <div class="status" id="status">Spremno</div>
-    </div>
-  </div>
-
-  <div class="dice-grid" id="diceGrid" role="list">
-    <!-- 6 dice will be inserted by JS -->
-  </div>
 </div>
-
-<script>
-// Simple, robust dice roller UI
-(function(){
-  const diceGrid = document.getElementById('diceGrid');
-  const rollAllBtn = document.getElementById('rollAll');
-  const resetBtn = document.getElementById('reset');
-  const status = document.getElementById('status');
-
-  // Create 6 dice
-  const DICE_COUNT = 6;
-  const dice = [];
-
-  function createDie(index){
-    const el = document.createElement('div');
-    el.className = 'die';
-    el.setAttribute('role','button');
-    el.setAttribute('aria-label', `Kocka ${index+1} vrijednost nepoznata`);
-    el.tabIndex = 0;
-    el.dataset.value = '';
-
-    // svg face container
-    const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
-    svg.setAttribute('class','dface');
-    svg.setAttribute('viewBox','0 0 100 100');
-    el.appendChild(svg);
-
-    // click / keyboard
-    el.addEventListener('click', ()=> rollSingle(index));
-    el.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); rollSingle(index); } });
-
-    return {el, svg, value: null};
-  }
-
-  function renderPips(svg, value){
-    while(svg.firstChild) svg.removeChild(svg.firstChild);
-    // positions for pips
-    const pos = {
-      1:[[50,50]],
-      2:[[25,25],[75,75]],
-      3:[[25,25],[50,50],[75,75]],
-      4:[[25,25],[25,75],[75,25],[75,75]],
-      5:[[25,25],[25,75],[50,50],[75,25],[75,75]],
-      6:[[25,20],[25,50],[25,80],[75,20],[75,50],[75,80]]
-    };
-    const list = pos[value] || [];
-    list.forEach(([cx,cy])=>{
-      const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
-      c.setAttribute('cx',cx);
-      c.setAttribute('cy',cy);
-      c.setAttribute('r',8);
-      c.setAttribute('fill','#222');
-      svg.appendChild(c);
-    });
-  }
-
-  // Initialize dice DOM
-  for(let i=0;i<DICE_COUNT;i++){
-    const d = createDie(i);
-    dice.push(d);
-    diceGrid.appendChild(d.el);
-  }
-
-  // Utility: random 1..6
-  function r(){ return Math.floor(Math.random()*6)+1 }
-
-  // Animate a single die roll: add 'rolling' class and rapidly change face
-  function animateDie(die, duration=700){
-    return new Promise(resolve => {
-      const el = die.el;
-      el.classList.add('rolling');
-      const interval = 80; // change face every 80ms
-      let elapsed = 0;
-      const t = setInterval(()=>{
-        const v = r();
-        die.value = v;
-        renderPips(die.svg, v);
-        el.dataset.value = v;
-        el.setAttribute('aria-label', `Kocka vrijednost ${v}`);
-        elapsed += interval;
-        if(elapsed >= duration){
-          clearInterval(t);
-          el.classList.remove('rolling');
-          resolve(v);
-        }
-      }, interval);
-    });
-  }
-
-  let rollingAll = false;
-
-  async function rollAll(){
-    if(rollingAll) return;
-    rollingAll = true;
-    rollAllBtn.disabled = true;
-    resetBtn.disabled = true;
-    status.textContent = 'Vrti se...';
-
-    // animate all dice simultaneously
-    const promises = dice.map(d => animateDie(d, 800 + Math.random()*400));
-    const results = await Promise.all(promises);
-
-    status.textContent = 'Gotovo';
-    rollAllBtn.disabled = false;
-    resetBtn.disabled = false;
-    rollingAll = false;
-    return results;
-  }
-
-  async function rollSingle(i){
-    // if we are rolling all, still allow singles but prevent colliding animations
-    const die = dice[i];
-    if(die.el.classList.contains('rolling')) return; // ignore if already rolling
-    die.el.classList.add('rolling');
-    status.textContent = `Kocka ${i+1} se vrti...`;
-    // small random duration
-    const val = await animateDie(die, 600 + Math.random()*300);
-    die.el.classList.remove('rolling');
-    status.textContent = `Kocka ${i+1} = ${val}`;
-  }
-
-  // Reset: clear values and faces
-  function resetAll(){
-    dice.forEach((d, idx) => {
-      d.value = null;
-      d.el.dataset.value = '';
-      d.el.setAttribute('aria-label', `Kocka ${idx+1} vrijednost nepoznata`);
-      while(d.svg.firstChild) d.svg.removeChild(d.svg.firstChild);
-    });
-    status.textContent = 'Resetirano';
-  }
-
-  // Hook buttons
-  rollAllBtn.addEventListener('click', ()=>{
-    rollAll();
-  });
-  resetBtn.addEventListener('click', resetAll);
-
-  // initial placeholder faces (empty) -- draw rounded square border via svg background optional
-  resetAll();
-
-  // Expose for debugging in console
-  window._yambDice = {dice, rollAll, rollSingle, resetAll};
-})();
-</script>
-
 </body>
 </html>
+
 
 
 <!doctype html>
 <html lang="hr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>YAMB / Jamb obrazac (2x)</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YAMB s kockicama</title>
 <style>
   :root {
+    --bg: #f7f7f7;
+    --text: #222;
     --red: #c62828;
-    --light-bg: #f7f7f7;
-    --dark-bg: #000;
-    --light-text: #222;
-    --dark-text: #eee;
-    --cell-w: 72px;
-    --cell-h: 36px;
-    font-family: Arial, Helvetica, sans-serif;
+    --die-bg: #c62828;
+    --die-dot: #fff;
   }
-
+  body.dark {
+    --bg: #1e1e1e;
+    --text: #f1f1f1;
+    --red: #e53935;
+    --die-bg: #333;
+    --die-dot: #fff;
+  }
   body {
-    background: var(--light-bg);
-    color: var(--light-text);
-    padding: 18px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
     transition: background 0.3s, color 0.3s;
   }
-
-  body.dark {
-    background: var(--dark-bg);
-    color: var(--dark-text);
+  h1{font-size:16px;margin-bottom:12px}
+  .dice-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
   }
-
-  h1 { font-size:18px;margin:0 0 10px;color:var(--red) }
-  .wrap { display:flex;gap:18px;flex-wrap:wrap }
-  .sheet {
-    background:linear-gradient(180deg,#fff6f6,#fff);
-    border:3px solid var(--red);
-    padding:12px;
-    box-shadow:0 2px 6px rgba(0,0,0,0.08);
-    width:760px;
-    transition: background 0.3s;
-  }
-  body.dark .sheet { background:#111; }
-
-  table { border-collapse:collapse;width:100% }
-  td, th {
-    border:1px solid var(--red);
-    text-align:center;
-    padding:4px;
-    vertical-align:middle;
-    min-width:var(--cell-w);
-    height:var(--cell-h);
-  }
-  th { background:var(--red);color:white;font-weight:700;padding:6px }
-  .num-col { width:48px;font-weight:700;color:var(--red) }
-  .big-right { width:120px }
-  input[type="text"] {
-    width:100%;
-    height:100%;
-    border:0;
-    padding:4px;
-    box-sizing:border-box;
-    text-align:center;
-    font-size:14px;
-    background:transparent;
-    outline:none;
-    color:inherit;
-  }
-  .label-left { font-weight:700;text-align:left;padding-left:8px;color:var(--red) }
-  .small{font-size:12px}
-  .wide{min-width:90px}
-  .footer-note{font-size:11px;color:#666;margin-top:8px}
-  @media(max-width:900px){ .sheet{width:100%} }
-
-  /* Dice */
-  .die circle { fill:#222; }
-  body.dark .die circle { fill: var(--red); }
-
-  /* toggle button */
-  .toggle-btn {
-    margin-bottom: 12px;
-    padding: 8px 14px;
-    background: var(--red);
-    color: #fff;
-    border: none;
+  .die {
+    width: 60px;
+    height: 60px;
+    background: var(--die-bg);
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 6px;
     cursor: pointer;
-    border-radius: 6px;
-    font-weight: bold;
+    transition: transform 0.2s;
   }
+  .die:active { transform: scale(0.9); }
+  .dot {
+    width: 10px;
+    height: 10px;
+    background: var(--die-dot);
+    border-radius: 50%;
+    justify-self: center;
+    align-self: center;
+  }
+  button {
+    background: var(--red);
+    border: none;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 4px;
+  }
+  button:hover { opacity: 0.9; }
 </style>
 </head>
 <body>
+<h1>Digitalni YAMB – Kocke</h1>
 
-<button class="toggle-btn" id="toggleMode">🌙 Dark/Light</button>
-<h1>YAMB / Jamb obrazac — 2 kopije (uredivo)</h1>
-
-<!-- your existing sheets + dice go here (unchanged) -->
+<div class="dice-container" id="dice"></div>
+<div>
+  <button onclick="rollAll()">Zavrti sve</button>
+  <button onclick="toggleTheme()">🌞/🌙</button>
+</div>
 
 <script>
-  // Toggle dark/light mode
-  document.getElementById('toggleMode').addEventListener('click', ()=>{
-    document.body.classList.toggle('dark');
-  });
-</script>
+const diceContainer = document.getElementById('dice');
+const dice = [];
+const dotPatterns = {
+  1: [4],
+  2: [0,8],
+  3: [0,4,8],
+  4: [0,2,6,8],
+  5: [0,2,4,6,8],
+  6: [0,2,3,5,6,8]
+};
 
+// napravi 6 kockica
+for(let i=0;i<6;i++){
+  const die = document.createElement('div');
+  die.className = 'die';
+  die.addEventListener('click', ()=> rollOne(die));
+  diceContainer.appendChild(die);
+  dice.push(die);
+}
+
+// iscrtaj broj
+function drawDie(die, value){
+  die.innerHTML = '';
+  for(let i=0;i<9;i++){
+    const cell = document.createElement('div');
+    if(dotPatterns[value].includes(i)){
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+      cell.appendChild(dot);
+    }
+    die.appendChild(cell);
+  }
+}
+
+// baci jednu kocku
+function rollOne(die){
+  const val = Math.floor(Math.random()*6)+1;
+  drawDie(die,val);
+}
+
+// baci sve
+function rollAll(){
+  dice.forEach(d=> rollOne(d));
+}
+
+// tema
+function toggleTheme(){
+  document.body.classList.toggle('dark');
+}
+
+// inicijalno
+rollAll();
+</script>
 </body>
 </html>
